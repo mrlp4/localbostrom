@@ -1,11 +1,11 @@
 {
-  "genesis_time": "2021-11-05T13:22:42Z",
+  "genesis_time": "2024-07-31T11:33:51.874890993Z",
   "chain_id": "localbostrom",
   "initial_height": "1",
   "consensus_params": {
     "block": {
-      "max_bytes": "4194304",
-      "max_gas": "25000000"
+      "max_bytes": "22020096",
+      "max_gas": "30000000"
     },
     "evidence": {
       "max_age_num_blocks": "100000",
@@ -23,6 +23,8 @@
   },
   "app_hash": "",
   "app_state": {
+    "06-solomachine": null,
+    "07-tendermint": null,
     "auth": {
       "params": {
         "max_memo_characters": "1024",
@@ -237,6 +239,11 @@
       "index": "1",
       "owners": []
     },
+    "clock": {
+      "params": {
+        "contract_gas_limit": "100000"
+      }
+    },
     "consensus": null,
     "crisis": {
       "constant_fee": {
@@ -318,8 +325,12 @@
             ],
             "memo": "62cd922a9d9349e790247dadd1e32947450502fb@192.168.0.100:26656",
             "timeout_height": "0",
-            "extension_options": [],
-            "non_critical_extension_options": []
+            "extension_options": [
+              
+            ],
+            "non_critical_extension_options": [
+              
+            ]
           },
           "auth_info": {
             "signer_infos": [
@@ -337,7 +348,9 @@
               }
             ],
             "fee": {
-              "amount": [],
+              "amount": [
+
+              ],
               "gas_limit": "200000",
               "payer": "",
               "granter": ""
@@ -367,7 +380,7 @@
         ],
         "max_deposit_period": "300s",
         "voting_period": "300s",
-        "quorum": "0.15000000000000000",
+        "quorum": "0.150000000000000000",
         "threshold": "0.150000000000000000",
         "veto_threshold": "0.150000000000000000",
         "min_initial_deposit_ratio": "0.000000000000000000",
@@ -391,7 +404,8 @@
         "params": {
           "allowed_clients": [
             "06-solomachine",
-            "07-tendermint"
+            "07-tendermint",
+            "09-localhost"
           ]
         },
         "create_localhost": false,
@@ -458,6 +472,10 @@
         "blocks_per_year": "6311520"
       }
     },
+    "nft": {
+      "classes": [],
+      "entries": []
+    },
     "params": null,
     "rank": {
       "params": {
@@ -490,7 +508,7 @@
         "min_signed_per_window": "0.750000000000000000",
         "downtime_jail_duration": "600s",
         "slash_fraction_double_sign": "0.050000000000000000",
-        "slash_fraction_downtime": "0.000100000000000000"
+        "slash_fraction_downtime": "0.001000000000000000"
       },
       "signing_infos": [],
       "missed_blocks": []
@@ -511,6 +529,18 @@
       "unbonding_delegations": [],
       "redelegations": [],
       "exported": false
+    },
+    "tokenfactory": {
+      "params": {
+        "denom_creation_fee": [
+          {
+            "denom": "boot",
+            "amount": "10000000"
+          }
+        ],
+        "denom_creation_gas_consume": "2000000"
+      },
+      "factory_denoms": []
     },
     "transfer": {
       "port_id": "transfer",

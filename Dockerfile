@@ -34,7 +34,7 @@ WORKDIR /sources
 
 # Install build tools and compile cyber without cpu
 ###########################################################################################
-RUN apt-get -y install --no-install-recommends \
+RUN apt-get update && apt-get -y install --no-install-recommends \
     make gcc g++ \
     curl \
     gnupg \
@@ -46,7 +46,7 @@ RUN apt-get -y install --no-install-recommends \
 && cd /sources \
 && git clone https://github.com/cybercongress/go-cyber.git \
 && cd go-cyber \
-&& git checkout v4.0.0-rc1 \
+&& git checkout v4.0.0-rc2 \
 && make build CUDA_ENABLED=false \
 && cp ./build/cyber /cyber/cosmovisor/genesis/bin/ \
 && cp ./build/cyber /usr/local/bin \ 
