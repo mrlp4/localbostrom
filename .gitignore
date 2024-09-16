@@ -61,3 +61,5 @@ config/addrbook.json
 config/write-file-atomic*
 data/*
 cyberindex/postgres/
+
+testnets
